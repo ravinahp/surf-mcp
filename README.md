@@ -34,7 +34,7 @@ Choose a plan based on your usage requirements. The free tier is suitable for te
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/surf-mcp.git
+git clone https://github.com/ravinahp/surf-mcp.git
 cd surf-mcp
 ```
 
