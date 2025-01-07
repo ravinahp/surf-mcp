@@ -1,6 +1,6 @@
-# surf-mcp
+# Surf MCP Server
 
-A FastMCP-based service that provides tide information using the Storm Glass API.
+MCP server for people who surf waves and the web.
 
 ## Features
 
