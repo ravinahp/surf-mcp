@@ -117,15 +117,9 @@ Distance: 20.5km from requested location
 You can use this tool to determine the optimal surfing time at your favorite beach. Generally, the best surfing conditions are during incoming (rising) tides, about 2 hours before high tide.
 
 Example prompt to Claude:
-```
-What's the best time to go surfing at Playa Hermosa, Costa Rica (9.5731° N, 84.5874° W) tomorrow based on the tides?
-```
+<img width="693" alt="Screenshot 2025-01-07 at 12 55 47 PM" src="https://github.com/user-attachments/assets/f605494a-9842-40b9-a9f2-cfcfae0cb908" />
 
-The tool will return tide times in UTC, which you'll need to convert to local time. For Costa Rica (UTC-6):
-- If high tide is at 14:30 UTC, that's 8:30 AM local time
-- Best surfing time would be around 6:30 AM - 8:30 AM local time
-
-Note: Different beaches may have different optimal tide conditions based on their specific geography and break type. Local knowledge and experience should always be considered alongside tide information.
+Note: Different beaches may have different optimal tide conditions based on their specific geography and break type. Local knowledge and experience should always be considered alongside tide information, as Storm Glass API may not have a monitor close enough. 
 
 ## Running the Server
 
