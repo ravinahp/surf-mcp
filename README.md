@@ -49,10 +49,35 @@ source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-4. Create a `.env` file in the root directory and add your Storm Glass API key:
+## Configure as MCP Server
+
+To add this tool as an MCP server, you'll need to modify your Claude desktop configuration file. This configuration includes your Storm Glass API key, so you won't need to set it up separately.
+
+The configuration file location depends on your operating system:
+
+- MacOS: `~/Library/Application\ Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%/Claude/claude_desktop_config.json`
+
+Add the following configuration to your JSON file:
+
+```json
+{
+    "surf-mcp": {
+        "command": "uv",
+        "args": [
+            "--directory",
+            "/Users/yourusername/Code/surf-mcp",
+            "run",
+            "surf-mcp"
+        ],
+        "env": {
+            "STORMGLASS_API_KEY": "your_api_key_here"
+        }
+    }
+}
 ```
-STORMGLASS_API_KEY=your_api_key_here
-```
+
+Note: Replace `your_api_key_here` with your actual Storm Glass API key, and adjust the directory path to match your local installation.
 
 ## Usage
 
@@ -85,41 +110,32 @@ Name: Sample Station
 Distance: 20.5km from requested location
 ```
 
+## Use Cases
+
+### Example #1: Finding the Best Surf Time
+
+You can use this tool to determine the optimal surfing time at your favorite beach. Generally, the best surfing conditions are during incoming (rising) tides, about 2 hours before high tide.
+
+Example prompt to Claude:
+```
+What's the best time to go surfing at Playa Hermosa, Costa Rica (9.5731° N, 84.5874° W) tomorrow based on the tides?
+```
+
+The tool will return tide times in UTC, which you'll need to convert to local time. For Costa Rica (UTC-6):
+- If high tide is at 14:30 UTC, that's 8:30 AM local time
+- Best surfing time would be around 6:30 AM - 8:30 AM local time
+
+Note: Different beaches may have different optimal tide conditions based on their specific geography and break type. Local knowledge and experience should always be considered alongside tide information.
+
 ## Running the Server
 
 To start the server:
 
+
+## Running the Server
 ```bash
 python -m src.surf.server
 ```
-
-## Configure as MCP Server
-
-To add this tool as an MCP server, you'll need to modify your Claude desktop configuration file. The location of this file depends on your operating system:
-
-- MacOS: `~/Library/Application\ Support/Claude/claude_desktop_config.json`
-- Windows: `%APPDATA%/Claude/claude_desktop_config.json`
-
-Add the following configuration to your JSON file:
-
-```json
-{
-    "surf-mcp": {
-        "command": "uv",
-        "args": [
-            "--directory",
-            "/Users/yourusername/Code/surf-mcp",
-            "run",
-            "surf-mcp"
-        ],
-        "env": {
-            "STORMGLASS_API_KEY": "your_api_key_here"
-        }
-    }
-}
-```
-
-Note: Replace `your_api_key_here` with your actual Storm Glass API key, and adjust the directory path to match your local installation.
 
 ## Error Handling
 
