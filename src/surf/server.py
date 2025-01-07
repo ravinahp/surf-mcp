@@ -1,8 +1,12 @@
-import os
+import os 
 from typing import Any
 import httpx
+import logging
 from mcp.server.fastmcp import FastMCP
 from dotenv import load_dotenv
+
+# Set up logging
+logger = logging.getLogger(__name__)
 
 # Load environment variables
 load_dotenv()
@@ -78,7 +82,15 @@ async def get_tides(latitude: float, longitude: float, date: str) -> str:
     
     return format_tide_data(data)
 
+def main():
+    """Entry point for the surf-mcp application."""
+    logger.info("Starting Surf MCP server")
+    try:
+        mcp.run(transport='stdio')
+        logger.info("Server initialized successfully")
+    except Exception as e:
+        logger.error(f"Server error occurred: {str(e)}", exc_info=True)
+        raise
 
 if __name__ == "__main__":
-    # Initialize and run the server
-    mcp.run(transport='stdio')
+    main()

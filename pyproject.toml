@@ -1,13 +1,33 @@
 [project]
-name = "surf"
+name = "surf-mcp"
 version = "0.1.0"
+description = "MCP surf project"
+readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "httpx",
-    "mcp[cli]",
-    "python-dotenv",
+    "mcp>=1.0.0",
+    "python-dotenv>=1.0.1",
+    # add other dependencies your project needs
 ]
 
-[tool.setuptools]
-package-dir = {"" = "src"}
-packages = ["surf"]
+[[project.authors]]
+name = "Ravina Patel"
+email = "ravinapatel738@gmail.com"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+surf-mcp = "surf:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/surf"]
+
+[dependency-groups]
+dev = [
+    "surf-mcp",
+]
+
+[tool.uv.sources]
+surf-mcp = { workspace = true }
