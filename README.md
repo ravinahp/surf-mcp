@@ -62,7 +62,7 @@ Add the following configuration to your JSON file:
         "command": "uv",
         "args": [
             "--directory",
-            "/Users/yourusername/Code/surf-mcp",
+            "/Users/YOUR_USERNAME/Code/surf-mcp",
             "run",
             "surf-mcp"
         ],
@@ -73,33 +73,27 @@ Add the following configuration to your JSON file:
 }
 ```
 
-Note: Replace `your_api_key_here` with your actual Storm Glass API key, and adjust the directory path to match your local installation.
+⚠️ IMPORTANT: 
+1. Replace `YOUR_USERNAME` with your actual system username
+2. Replace `your_api_key_here` with your actual Storm Glass API key
+3. Make sure the directory path matches your local installation
 
 ## Deployment
 
-### Building and Publishing
+### Building
 
-To prepare the package for distribution:
+To prepare the package:
 
 1. Sync dependencies and update lockfile:
 ```bash
 uv sync
 ```
 
-2. Build package distributions:
+2. Build package:
 ```bash
 uv build
 ```
-This will create source and wheel distributions in the `dist/` directory.
-
-3. Publish to PyPI:
-```bash
-uv publish
-```
-
-Note: You'll need to set PyPI credentials via environment variables or command flags:
-- Token: `--token` or `UV_PUBLISH_TOKEN`
-- Or username/password: `--username`/`UV_PUBLISH_USERNAME` and `--password`/`UV_PUBLISH_PASSWORD`
+This will create distributions in the `dist/` directory.
 
 ### Debugging
 
@@ -161,16 +155,6 @@ Example prompt to Claude:
 <img width="693" alt="Screenshot 2025-01-07 at 12 55 47 PM" src="https://github.com/user-attachments/assets/f605494a-9842-40b9-a9f2-cfcfae0cb908" />
 
 Note: Different beaches may have different optimal tide conditions based on their specific geography and break type. This tool also provides station distance information which should be considered alongside tide information. (ie. longer station distance means higher change of innacuracy - you can ask Claude for this as well when prompting). 
-
-## Running the Server
-
-To start the server:
-
-
-## Running the Server
-```bash
-python -m src.surf.server
-```
 
 ## Error Handling
 
