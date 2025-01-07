@@ -114,12 +114,13 @@ Distance: 20.5km from requested location
 
 ### Example #1: Finding the Best Surf Time
 
-You can use this tool to determine the optimal surfing time at your favorite beach. Generally, the best surfing conditions are during incoming (rising) tides, about 2 hours before high tide.
+You can use this tool to determine the optimal surfing time at your favorite beach & the closest station. Generally, the best surfing conditions are during incoming (rising) tides, about 2 hours before high tide. 
 
 Example prompt to Claude:
+
 <img width="693" alt="Screenshot 2025-01-07 at 12 55 47 PM" src="https://github.com/user-attachments/assets/f605494a-9842-40b9-a9f2-cfcfae0cb908" />
 
-Note: Different beaches may have different optimal tide conditions based on their specific geography and break type. Local knowledge and experience should always be considered alongside tide information, as Storm Glass API may not have a monitor close enough. 
+Note: Different beaches may have different optimal tide conditions based on their specific geography and break type. This tool also provides station distance information which should be considered alongside tide information. (ie. longer station distance means higher change of innacuracy - you can ask Claude for this as well when prompting). 
 
 ## Running the Server
 
