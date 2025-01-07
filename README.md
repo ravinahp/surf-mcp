@@ -38,16 +38,12 @@ git clone https://github.com/yourusername/surf-mcp.git
 cd surf-mcp
 ```
 
-2. Set up your environment:
+2. Install dependencies using uv:
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+uv sync
 ```
 
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+Note: We use `uv` instead of pip since the project uses `pyproject.toml` for dependency management.
 
 ## Configure as MCP Server
 
@@ -78,6 +74,50 @@ Add the following configuration to your JSON file:
 ```
 
 Note: Replace `your_api_key_here` with your actual Storm Glass API key, and adjust the directory path to match your local installation.
+
+## Deployment
+
+### Building and Publishing
+
+To prepare the package for distribution:
+
+1. Sync dependencies and update lockfile:
+```bash
+uv sync
+```
+
+2. Build package distributions:
+```bash
+uv build
+```
+This will create source and wheel distributions in the `dist/` directory.
+
+3. Publish to PyPI:
+```bash
+uv publish
+```
+
+Note: You'll need to set PyPI credentials via environment variables or command flags:
+- Token: `--token` or `UV_PUBLISH_TOKEN`
+- Or username/password: `--username`/`UV_PUBLISH_USERNAME` and `--password`/`UV_PUBLISH_PASSWORD`
+
+### Debugging
+
+Since MCP servers run over stdio, debugging can be challenging. For the best debugging experience, we strongly recommend using the MCP Inspector.
+
+You can launch the MCP Inspector with this command:
+
+```bash
+npx @modelcontextprotocol/inspector uv --directory /path/to/surf-mcp run surf-mcp
+```
+
+Upon launching, the Inspector will display a URL that you can access in your browser to begin debugging.
+
+The Inspector provides:
+- Real-time request/response monitoring
+- Input/output validation
+- Error tracking
+- Performance metrics
 
 ## Usage
 
