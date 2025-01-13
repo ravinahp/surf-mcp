@@ -2,6 +2,9 @@
 
 MCP server for people who surf waves and the web.
 
+https://github.com/user-attachments/assets/0a4453e2-66df-4bf5-8366-8538cda366ed
+
+
 ## Features
 
 - Fetch tide information for any location using latitude and longitude
