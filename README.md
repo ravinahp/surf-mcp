@@ -3,7 +3,8 @@
 MCP server for people who surf waves and the web.
 
 ## Diagram
-![Frame 238246](https://github.com/user-attachments/assets/2149e35d-1534-4aed-a40a-a2c6dc146d29)
+![Letter Dot Grid - 5 dpi](https://github.com/user-attachments/assets/6a065a75-4ac4-4cae-965b-4990d6bd970a)
+
 
 
 ## Video Demo
