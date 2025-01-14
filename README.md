@@ -2,6 +2,10 @@
 
 MCP server for people who surf waves and the web.
 
+## Diagram
+![Frame 238246](https://github.com/user-attachments/assets/31a85253-7bdf-4307-a764-8206b2cd4bed)
+
+## Video Demo
 https://github.com/user-attachments/assets/0a4453e2-66df-4bf5-8366-8538cda366ed
 
 
